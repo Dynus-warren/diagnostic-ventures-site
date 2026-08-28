@@ -182,6 +182,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .tech-image img { width: 100%; height: 100%; object-fit: contain; }
 .workflow-section { padding: 110px 0; color: #fff; background: var(--navy); }
 .workflow-section .section-heading h2 { color: #fff; }
+.workflow-intro { margin-bottom: 76px; }
+.workflow-title { text-align: center; }
+.workflow-title > span { display: block; width: min(320px, 28vw); height: 5px; margin: 0 auto 36px; background: #fff; }
+.workflow-title h2 { margin: 0; font-family: "Lato", sans-serif; font-size: clamp(3rem, 5.3vw, 5.3rem); font-weight: 500; line-height: 1; letter-spacing: -.035em; }
+.workflow-overview { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(56px, 9vw, 130px); align-items: center; margin-top: 130px; }
+.workflow-overview > p { max-width: 650px; margin: 0; text-align: center; font-family: "Lato", sans-serif; font-size: clamp(2rem, 3.3vw, 3.35rem); font-weight: 700; line-height: 1.08; }
+.workflow-overview-image { overflow: hidden; border-radius: 26px; }
+.workflow-overview-image img { display: block; width: 100%; height: auto; aspect-ratio: 1.5; object-fit: cover; }
 .workflow-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #ffffff26; border-radius: var(--radius); overflow: hidden; }
 .workflow-grid article { min-height: 390px; padding: 34px; border-right: 1px solid #ffffff26; }
 .workflow-grid article:last-child { border: 0; }
@@ -316,6 +324,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .concentration-bar .bacteria { align-items: flex-start; }
   .technology-section .section-heading h2 { font-size: clamp(2.25rem, 9.8vw, 3.35rem); }
   .workflow-grid { grid-template-columns: 1fr 1fr; }
+  .workflow-intro { margin-bottom: 58px; }
+  .workflow-title > span { width: 180px; height: 4px; margin-bottom: 28px; }
+  .workflow-overview { grid-template-columns: 1fr; gap: 38px; margin-top: 70px; }
+  .workflow-overview > p { max-width: 620px; margin-inline: auto; }
+  .workflow-overview-image { max-width: 680px; margin-inline: auto; }
   .workflow-grid article { min-height: 250px; border-bottom: 1px solid #ffffff26; }
   .workflow-grid article:nth-child(2) { border-right: 0; }
   .workflow-grid article:nth-child(n+3) { border-bottom: 0; }
