@@ -52,9 +52,7 @@ export function InquiryForm({ variant = "contact" }: { variant?: "contact" | "in
     : variant === "progress"
       ? { title: "Track our progress", subtitle: "Connect with our team for product and clinical timeline updates.", subject: "Clarity ID progress inquiry" }
       : { title: "Send us a message", subtitle: "We’ll direct your note to the right member of our team.", subject: "Website inquiry" };
-  const recipient = variant === "contact"
-    ? "brian@diagnosticventures.net"
-    : "info@diagnosticventures.net";
+  const recipient = "brian@diagnosticventures.net";
 
   function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
