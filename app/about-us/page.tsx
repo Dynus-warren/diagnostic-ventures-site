@@ -1,0 +1,34 @@
+import type { Metadata } from "next";
+import { PageHero, SectionHeading, SiteEnd } from "../site-components";
+
+export const metadata: Metadata = { title: "About Us", description: "The story, mission, and scientific foundation behind Diagnostic Ventures." };
+
+const hero = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a24ee86f6d40c97f0808f6a_pexels-tima-miroshnichenko-9574477.jpg";
+const teamImage = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a2877cab46db98b1dc59b21_6a24eb8908092d82f182c9e5_pexels-pavel-danilyuk-8442446.jpg";
+
+export default function AboutPage() {
+  return <main>
+    <PageHero eyebrow="About Diagnostic Ventures" title="Unified by a mission—solving healthcare’s deadliest diagnostic challenge." image={hero} />
+    <section className="section-pad">
+      <div className="shell story-grid">
+        <SectionHeading eyebrow="Our story" title="Eliminating the wait for effective treatment." />
+        <div className="long-copy">
+          <p>Nearly one in three hospital deaths is linked to sepsis—a fast-moving condition where every hour without targeted treatment decreases survival. Within 12 hours of infection, patients can face septic shock with a mortality rate of up to 50%. Yet traditional pathogen identification diagnostics take 12 to 48 hours.</p>
+          <p>Diagnostic Ventures was born to eliminate this delay. The company grew from research led by Dr. William Pitt at Brigham Young University and supported by a $5.2M NIH grant. The team tackled bioengineering’s needle-in-a-haystack problem: isolating only a handful of bacterial cells from billions of host cells.</p>
+          <p>Rather than relying on culture bottlenecks, the team engineered a proprietary centrifuge platform that isolates plasma in under four minutes. Today, in collaboration with BYU research facilities, Diagnostic Ventures is combining centrifugal isolation, downstream bacterial processing, Raman spectroscopy, and machine learning to advance rapid pathogen identification.</p>
+        </div>
+      </div>
+    </section>
+    <section className="mission-panel">
+      <div className="shell mission-grid">
+        <div><p className="eyebrow light">Our mission</p><h2>Make definitive diagnostics available when treatment decisions are made.</h2></div>
+        <p>We are solving healthcare’s deadliest diagnostic challenges by pioneering advanced, rapid testing systems that eliminate the wait for effective patient treatment.</p>
+      </div>
+    </section>
+    <section className="split-section shell about-team">
+      <div className="split-media"><img src={teamImage} alt="Scientists collaborating in a laboratory" /></div>
+      <div className="split-copy"><p className="eyebrow">Our team</p><h2>World-class scientists. Proven clinical leaders.</h2><p>Built on rigorous academic discovery and proven clinical execution, our team brings deep experience to the frontline of medicine. We have turned that experience toward pioneering the rapid diagnostics needed to redefine acute care.</p><a className="button button-primary" href="/our-team">Meet the team <span>↗</span></a></div>
+    </section>
+    <SiteEnd />
+  </main>;
+}
