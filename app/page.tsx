@@ -1,5 +1,6 @@
 import { Header } from "./site-client";
 import { Footer, PartnerCta, SectionHeading } from "./site-components";
+import Image from "next/image";
 
 const videoMp4 = "/media/hero.mp4";
 
@@ -74,7 +75,7 @@ export default function Home() {
           <a className="button button-primary" href="/solution">Meet Clarity ID™ <span>↗</span></a>
         </div>
         <div className="split-media machine-media">
-          <img src="/media/machine.png" alt="Clarity ID diagnostic instrument in a laboratory" />
+          <Image src="/media/machine.png" alt="Clarity ID diagnostic instrument in a laboratory" width={1186} height={757} sizes="(max-width: 800px) calc(100vw - 68px), 50vw" />
         </div>
       </section>
 

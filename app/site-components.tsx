@@ -1,5 +1,6 @@
 import { Header } from "./site-client";
 import Link from "next/link";
+import Image from "next/image";
 
 const logo = "/media/logo.png";
 
@@ -59,7 +60,7 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="shell footer-top">
-        <Link href="/" className="footer-brand"><img src={logo} alt="Diagnostic Ventures" /></Link>
+        <Link href="/" className="footer-brand"><Image src={logo} alt="Diagnostic Ventures" width={1248} height={367} /></Link>
         <nav aria-label="Footer navigation">
           <Link href="/about-us">About</Link>
           <Link href="/our-team">Team</Link>

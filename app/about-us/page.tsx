@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero, SectionHeading, SiteEnd } from "../site-components";
 
 export const metadata: Metadata = { title: "About Us", description: "The story, mission, and scientific foundation behind Diagnostic Ventures." };
@@ -26,7 +27,7 @@ export default function AboutPage() {
       </div>
     </section>
     <section className="split-section shell about-team">
-      <div className="split-media"><img src={teamImage} alt="Scientists collaborating in a laboratory" /></div>
+      <div className="split-media"><Image src={teamImage} alt="Scientists collaborating in a laboratory" width={3425} height={3316} sizes="(max-width: 800px) calc(100vw - 32px), 50vw" /></div>
       <div className="split-copy"><p className="eyebrow">Our team</p><h2>World-class scientists. Proven clinical leaders.</h2><p>Built on rigorous academic discovery and proven clinical execution, our team brings deep experience to the frontline of medicine. We have turned that experience toward pioneering the rapid diagnostics needed to redefine acute care.</p><a className="button button-primary" href="/our-team">Meet the team <span>↗</span></a></div>
     </section>
     <SiteEnd />

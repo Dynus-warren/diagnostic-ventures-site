@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero, SectionHeading, SiteEnd } from "../site-components";
 
 export const metadata: Metadata = { title: "The Problem", description: "Why conventional sepsis diagnostics cannot meet the urgency of acute care." };
@@ -22,7 +23,7 @@ export default function ProblemPage() {
     </section>
     <section className="testing-gap">
       <div className="shell testing-grid">
-        <div className="testing-image"><img src={testing} alt="Clinical sample processing in a laboratory" /></div>
+        <div className="testing-image"><Image src={testing} alt="Clinical sample processing in a laboratory" width={2000} height={1333} sizes="(max-width: 800px) calc(100vw - 32px), 45vw" /></div>
         <div className="testing-copy">
           <p className="eyebrow light">The testing gap</p><h2>The standard of care can take 12–72 hours.</h2>
           <p>Conventional workflows depend on three slow, sequential stages before clinicians receive actionable data.</p>

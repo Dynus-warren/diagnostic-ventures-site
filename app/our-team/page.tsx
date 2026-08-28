@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero, SectionHeading, SiteEnd } from "../site-components";
 
 export const metadata: Metadata = { title: "Our Team", description: "Meet the clinical, scientific, and commercial leaders behind Diagnostic Ventures." };
@@ -16,7 +17,7 @@ const people = [
 ];
 
 function PersonCard({ person }: { person: typeof people[number] }) {
-  return <article className="person-card"><div className="person-image"><img src={person.image} alt={person.name} /></div><div className="person-copy"><h3>{person.name}</h3><p className="person-role">{person.role}</p><p>{person.bio}</p></div></article>;
+  return <article className="person-card"><div className="person-image"><Image src={person.image} alt={person.name} fill sizes="(max-width: 800px) calc(100vw - 32px), 33vw" /></div><div className="person-copy"><h3>{person.name}</h3><p className="person-role">{person.role}</p><p>{person.bio}</p></div></article>;
 }
 
 export default function TeamPage() {

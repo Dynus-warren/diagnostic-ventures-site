@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const logo = "/media/logo.png";
@@ -45,7 +46,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
     <header className={`site-header ${overlay ? "is-overlay" : ""} ${scrolled ? "is-scrolled" : ""} ${open ? "is-menu-open" : ""}`}>
       <div className="shell nav-row">
         <Link className="brand" href="/" aria-label="Diagnostic Ventures home" onClick={() => setOpen(false)}>
-          <img src={logo} alt="Diagnostic Ventures" />
+          <Image src={logo} alt="Diagnostic Ventures" width={1248} height={367} priority />
         </Link>
         <nav id="site-navigation" className={`nav-links ${open ? "is-open" : ""}`} aria-label="Main navigation">
           <div className={`nav-about ${aboutIsCurrent ? "is-current" : ""}`}>
@@ -109,8 +110,8 @@ export function InquiryForm({ variant = "contact" }: { variant?: "contact" | "in
         {variant === "investor" && <label><span>Phone</span><input name="phone" type="tel" autoComplete="tel" placeholder="Optional" /></label>}
         <label className="form-wide"><span>How can we help?</span><textarea name="message" required rows={5} placeholder="Share a little context…" /></label>
         <div className="form-action form-wide">
-          <button className="button button-primary" type="submit">Compose message <span>↗</span></button>
-          <p>{sent ? "Your email app should now be open with your message ready to send." : "Submitting opens a pre-addressed email in your default mail app."}</p>
+          <button className="button button-primary" type="submit">Compose email <span>↗</span></button>
+          <p aria-live="polite">{sent ? "Your email app should now be open with your message addressed to Brian." : "Submitting opens a pre-addressed email to brian@diagnosticventures.net."}</p>
         </div>
       </form>
     </div>
