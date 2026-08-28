@@ -183,10 +183,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .workflow-section { padding: 110px 0; color: #fff; background: var(--navy); }
 .workflow-section .section-heading h2 { color: #fff; }
 .workflow-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #ffffff26; border-radius: var(--radius); overflow: hidden; }
-.workflow-grid article { min-height: 300px; padding: 34px; border-right: 1px solid #ffffff26; }
+.workflow-grid article { min-height: 390px; padding: 34px; border-right: 1px solid #ffffff26; }
 .workflow-grid article:last-child { border: 0; }
 .workflow-grid span { color: var(--cyan); font-size: .75rem; font-weight: 700; }
-.workflow-grid h3 { margin: 100px 0 12px; font-family: "Lato"; font-size: 1.5rem; }
+.workflow-image { display: flex; align-items: center; justify-content: center; height: 158px; margin: 24px 0 20px; }
+.workflow-image img { width: 100%; height: 100%; object-fit: contain; }
+.workflow-grid h3 { margin: 0 0 12px; font-family: "Lato"; font-size: 1.5rem; }
 .workflow-grid p { margin: 0; color: #afbed0; font-size: .88rem; line-height: 1.65; }
 .comparison-section { background: #f5f8fa; }
 .comparison-table { border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 40px #14324f12; }
@@ -317,7 +319,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .workflow-grid article { min-height: 250px; border-bottom: 1px solid #ffffff26; }
   .workflow-grid article:nth-child(2) { border-right: 0; }
   .workflow-grid article:nth-child(n+3) { border-bottom: 0; }
-  .workflow-grid h3 { margin-top: 65px; }
+  .workflow-grid article { min-height: 360px; }
   .comparison-table { overflow: visible; background: transparent; box-shadow: none; }
   .comparison-head { display: none; }
   .comparison-row { display: grid; grid-template-columns: 1fr; min-width: 0; margin-bottom: 16px; padding: 18px 22px; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 10px 30px #14324f0c; }
