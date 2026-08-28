@@ -26,13 +26,28 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
     return () => window.removeEventListener("scroll", updateHeader);
   }, []);
 
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    const closeOnDesktop = () => {
+      if (window.innerWidth > 800) setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    window.addEventListener("resize", closeOnDesktop);
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+      window.removeEventListener("resize", closeOnDesktop);
+    };
+  }, []);
+
   return (
-    <header className={`site-header ${overlay ? "is-overlay" : ""} ${scrolled ? "is-scrolled" : ""}`}>
+    <header className={`site-header ${overlay ? "is-overlay" : ""} ${scrolled ? "is-scrolled" : ""} ${open ? "is-menu-open" : ""}`}>
       <div className="shell nav-row">
         <Link className="brand" href="/" aria-label="Diagnostic Ventures home" onClick={() => setOpen(false)}>
           <img src={logo} alt="Diagnostic Ventures" />
         </Link>
-        <nav className={`nav-links ${open ? "is-open" : ""}`} aria-label="Main navigation">
+        <nav id="site-navigation" className={`nav-links ${open ? "is-open" : ""}`} aria-label="Main navigation">
           <div className={`nav-about ${aboutIsCurrent ? "is-current" : ""}`}>
             <Link href="/about-us" aria-current={aboutIsCurrent ? "page" : undefined} onClick={() => setOpen(false)}>About</Link>
             <div className="nav-flyout">
@@ -50,6 +65,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="site-navigation"
           onClick={() => setOpen(!open)}
         >
           <span /><span />

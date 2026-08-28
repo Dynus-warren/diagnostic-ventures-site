@@ -43,7 +43,7 @@ main { overflow: clip; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0, 24, 60, .14); }
 .button span { transition: transform .2s ease; }
 .button:hover span { transform: translate(2px, -2px); }
-.button-nav { min-height: 44px; padding-inline: 22px; border-color: #ffffff80; }
+.nav-links > a.button-nav { min-height: 44px; padding-inline: 24px; border-color: #ffffff80; }
 .button-nav:hover, .button-nav.is-current { color: var(--navy); background: #fff; }
 .button-nav.is-current::after { display: none; }
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
@@ -163,17 +163,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .timeline h3 { margin: 0 0 6px; font-size: 1rem; }
 .timeline p { margin: 0; color: #aebed0; font-size: .88rem; line-height: 1.5; }
 .concentration .section-heading { max-width: 800px; }
-.concentration-bar { display: grid; grid-template-columns: 3fr 1.4fr 1fr .35fr; min-height: 220px; border-radius: var(--radius); overflow: hidden; background: #eaf1f5; }
+.concentration-bar { display: grid; grid-template-columns: 2.6fr 1.35fr 1.1fr .75fr; min-height: 220px; border-radius: var(--radius); overflow: hidden; background: #eaf1f5; }
 .concentration-bar > div { display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; border-right: 1px solid #fff; }
 .concentration-bar strong { font-family: "Lato"; font-size: clamp(1.7rem, 4vw, 3.8rem); }
 .concentration-bar span { color: var(--muted); font-size: .77rem; }
-.concentration-bar .bacteria { align-items: center; padding: 22px 8px; color: #fff; background: #4f73ad; }
-.concentration-bar .bacteria span { color: #fff; writing-mode: vertical-rl; }
+.concentration-bar .bacteria { align-items: flex-start; justify-content: flex-end; min-width: 128px; padding: 28px 22px; color: #fff; background: linear-gradient(145deg, #4f73ad, #3f659f); }
+.concentration-bar .bacteria strong { font-size: clamp(2.8rem, 4vw, 4.2rem); }
+.concentration-bar .bacteria span { color: #fff; line-height: 1.35; }
 .solution-prompt { padding: 110px 0; color: #fff; background: linear-gradient(120deg, #315a98, #5d7eb4); }
 .solution-prompt .shell { max-width: 860px; margin-left: max(24px, calc((100vw - 1180px) / 2)); }
 .solution-prompt p:not(.eyebrow) { max-width: 620px; color: #e2ebf5; line-height: 1.7; }
 
 .technology-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.technology-section .section-heading { max-width: 900px; }
+.technology-section .section-heading h2 { font-size: clamp(2.8rem, 4.25vw, 4.4rem); }
 .technology-grid article { padding: 26px 26px 34px; border: 1px solid var(--line); border-radius: var(--radius); }
 .tech-image { height: 360px; margin-bottom: 30px; overflow: hidden; border-radius: 12px; background: var(--ice); }
 .tech-image img { width: 100%; height: 100%; object-fit: contain; }
@@ -266,12 +269,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .nav-row { min-height: 74px; }
   .brand { width: 132px; }
   .menu-toggle { display: block; }
-  .nav-links { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; padding: 90px 34px 40px; background: var(--navy); opacity: 0; pointer-events: none; transform: translateY(-12px); transition: .25s ease; }
+  .site-header.is-menu-open { position: fixed; inset: 0; height: 100dvh; overflow: hidden; background: var(--navy); box-shadow: none; backdrop-filter: none; }
+  .site-header.is-menu-open .nav-row { height: 100%; align-items: flex-start; padding-top: 14px; }
+  .nav-links { position: fixed; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 8px; padding: clamp(126px, 21vh, 178px) 34px 40px; overflow-y: auto; background: var(--navy); opacity: 0; pointer-events: none; transform: translateY(-12px); transition: .25s ease; }
   .nav-links.is-open { opacity: 1; pointer-events: auto; transform: none; }
   .nav-links > a, .nav-about > a { font-family: "Lato"; font-size: 2rem; padding: 10px 0; }
   .nav-flyout { position: static; display: flex; width: auto; padding: 0 0 5px; background: transparent; color: #bcd0e7; box-shadow: none; opacity: 1; pointer-events: auto; transform: none; }
   .nav-flyout a { padding: 4px 16px 4px 0; font-size: .9rem; }
-  .button-nav { margin-top: 18px; font-family: "Inter" !important; font-size: .9rem !important; padding: 0 24px !important; }
+  .nav-links > a.button-nav { min-width: 150px; margin-top: 18px; padding-inline: 28px; font-family: "Inter"; font-size: .9rem; }
   .hero-home { min-height: 760px; }
   .hero-content { padding-top: 190px; }
   .hero h1 { font-size: clamp(3.8rem, 16vw, 5.2rem); }
@@ -307,7 +312,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .concentration-bar { grid-template-columns: 1fr 1fr; }
   .concentration-bar > div { min-height: 150px; }
   .concentration-bar .bacteria { align-items: flex-start; }
-  .concentration-bar .bacteria span { writing-mode: initial; }
+  .technology-section .section-heading h2 { font-size: clamp(2.25rem, 9.8vw, 3.35rem); }
   .workflow-grid { grid-template-columns: 1fr 1fr; }
   .workflow-grid article { min-height: 250px; border-bottom: 1px solid #ffffff26; }
   .workflow-grid article:nth-child(2) { border-right: 0; }
@@ -326,6 +331,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .contact-details strong, .contact-details a { overflow-wrap: anywhere; }
   .footer-top, .footer-bottom { align-items: flex-start; flex-direction: column; }
   .footer-top nav { flex-wrap: wrap; gap: 18px 24px; }
+}
+
+@media (max-width: 800px) and (max-height: 520px) {
+  .nav-links { gap: 0; padding-top: 78px; padding-bottom: 22px; }
+  .nav-links > a, .nav-about > a { padding-block: 6px; font-size: 1.55rem; }
+  .nav-flyout { padding-bottom: 0; }
+  .nav-flyout a { padding-block: 2px; font-size: .78rem; }
+  .nav-links > a.button-nav { min-height: 40px; margin-top: 8px; }
 }
 
 @media (max-width: 520px) {
