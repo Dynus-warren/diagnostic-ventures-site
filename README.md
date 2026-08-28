@@ -37,7 +37,7 @@ npm run build:sites
 
 ## Contact forms
 
-Forms validate input and open a pre-addressed email to `info@diagnosticventures.net`, preserving the visitor’s completed message without requiring a third-party form service or API key.
+Forms validate input and open a pre-addressed email, preserving the visitor’s completed message without requiring a third-party form service or API key. Contact-page messages go to `brian@diagnosticventures.net`; investor and product-progress inquiries go to `info@diagnosticventures.net`.
 
 ## Content note
 

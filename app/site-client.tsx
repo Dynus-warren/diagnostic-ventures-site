@@ -52,6 +52,9 @@ export function InquiryForm({ variant = "contact" }: { variant?: "contact" | "in
     : variant === "progress"
       ? { title: "Track our progress", subtitle: "Connect with our team for product and clinical timeline updates.", subject: "Clarity ID progress inquiry" }
       : { title: "Send us a message", subtitle: "We’ll direct your note to the right member of our team.", subject: "Website inquiry" };
+  const recipient = variant === "contact"
+    ? "brian@diagnosticventures.net"
+    : "info@diagnosticventures.net";
 
   function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -65,7 +68,7 @@ export function InquiryForm({ variant = "contact" }: { variant?: "contact" | "in
       String(data.get("message") || ""),
     ].filter(Boolean).join("\n");
     setSent(true);
-    window.location.href = `mailto:info@diagnosticventures.net?subject=${encodeURIComponent(labels.subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(labels.subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
