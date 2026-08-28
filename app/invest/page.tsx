@@ -4,7 +4,7 @@ import { PageHero, SectionHeading, SiteEnd } from "../site-components";
 
 export const metadata: Metadata = { title: "Investors", description: "Explore opportunities to support Diagnostic Ventures and the future of rapid sepsis diagnostics." };
 
-const hero = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a282f0fd113d2b62b58b0d5_pexels-edward-jenner-4031440.jpg";
+const hero = "/media/investors-hero.jpg";
 
 export default function InvestPage() {
   return <main>

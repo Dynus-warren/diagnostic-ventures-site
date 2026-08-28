@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const logo =
-  "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a7d311b5c459ff87f8c3b67_Diagnostic%20Ventures%20New%20Logo.png";
+const logo = "/media/logo.png";
 
 export function Header({ overlay = false }: { overlay?: boolean }) {
   const [open, setOpen] = useState(false);

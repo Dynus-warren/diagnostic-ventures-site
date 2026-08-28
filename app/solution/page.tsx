@@ -4,9 +4,9 @@ import { PageHero, SectionHeading, SiteEnd } from "../site-components";
 
 export const metadata: Metadata = { title: "Clarity ID™ Solution", description: "Meet the rapid pathogen isolation and identification technology behind Clarity ID." };
 
-const hero = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a282f0fb533ee9bba91188c_pexels-ivan-s-9629682.jpg";
-const isolation = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a285102a34198fe1d64c3ea_image_5eab7df0-p-800.png";
-const raman = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a2854ed8d6fa658ea1362bc_image_98bc82f3-p-800.png";
+const hero = "/media/solution-hero.jpg";
+const isolation = "/media/isolation.png";
+const raman = "/media/raman.png";
 
 export default function SolutionPage() {
   const steps = [

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   icons: {
-    icon: "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a7d3342d22aedee0d216335_Diagnostic%20Ventures%20New%20Logo%20copy.png",
+    icon: "/media/favicon.png",
   },
 };
 

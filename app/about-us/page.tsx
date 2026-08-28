@@ -3,8 +3,8 @@ import { PageHero, SectionHeading, SiteEnd } from "../site-components";
 
 export const metadata: Metadata = { title: "About Us", description: "The story, mission, and scientific foundation behind Diagnostic Ventures." };
 
-const hero = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a24ee86f6d40c97f0808f6a_pexels-tima-miroshnichenko-9574477.jpg";
-const teamImage = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a2877cab46db98b1dc59b21_6a24eb8908092d82f182c9e5_pexels-pavel-danilyuk-8442446.jpg";
+const hero = "/media/about-lab.jpg";
+const teamImage = "/media/about-team.jpg";
 
 export default function AboutPage() {
   return <main>

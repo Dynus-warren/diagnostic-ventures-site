@@ -1,17 +1,13 @@
 import { Header } from "./site-client";
 import { Footer, PartnerCta, SectionHeading } from "./site-components";
 
-const videoMp4 =
-  "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/65ef21f257cafd7bcbb79976_video-transcode.mp4";
-const videoWebm =
-  "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/65ef21f257cafd7bcbb79976_video-transcode.webm";
+const videoMp4 = "/media/hero.mp4";
 
 export default function Home() {
   return (
     <main>
       <section className="hero hero-home">
         <video className="hero-video" autoPlay muted loop playsInline aria-hidden="true">
-          <source src={videoWebm} type="video/webm" />
           <source src={videoMp4} type="video/mp4" />
         </video>
         <div className="hero-overlay" />
@@ -78,7 +74,7 @@ export default function Home() {
           <a className="button button-primary" href="/solution">Meet Clarity ID™ <span>↗</span></a>
         </div>
         <div className="split-media machine-media">
-          <img src="https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a245ac5e0bd5b67224dc7d8_image_7ec53601.png" alt="Clarity ID diagnostic instrument in a laboratory" />
+          <img src="/media/machine.png" alt="Clarity ID diagnostic instrument in a laboratory" />
         </div>
       </section>
 

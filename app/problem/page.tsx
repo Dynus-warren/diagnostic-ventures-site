@@ -3,8 +3,8 @@ import { PageHero, SectionHeading, SiteEnd } from "../site-components";
 
 export const metadata: Metadata = { title: "The Problem", description: "Why conventional sepsis diagnostics cannot meet the urgency of acute care." };
 
-const hero = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a2864e9f22be53946b4973f_pexels-sayan-mondal-1178632643-21826918.jpg";
-const testing = "https://cdn.prod.website-files.com/65ef21f157cafd7bcbb798f1/6a282f0f34269358a6893804_pexels-karola-g-4226902-p-2000.jpg";
+const hero = "/media/problem-hero.jpg";
+const testing = "/media/problem-lab.jpg";
 
 export default function ProblemPage() {
   return <main>
