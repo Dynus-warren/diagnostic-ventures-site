@@ -1,4 +1,5 @@
 import { Header } from "./site-client";
+import Link from "next/link";
 
 const logo = "/media/logo.png";
 
@@ -47,7 +48,7 @@ export function PartnerCta() {
         </div>
         <div>
           <p>Every minute counts when diagnosing sepsis. Connect with our team to learn more about our technology, clinical timeline, or partnership opportunities.</p>
-          <a className="button button-light" href="/contact-us">Contact us <span>↗</span></a>
+          <Link className="button button-light" href="/contact-us">Contact us <span>↗</span></Link>
         </div>
       </div>
     </section>
@@ -58,14 +59,14 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="shell footer-top">
-        <a href="/" className="footer-brand"><img src={logo} alt="Diagnostic Ventures" /></a>
+        <Link href="/" className="footer-brand"><img src={logo} alt="Diagnostic Ventures" /></Link>
         <nav aria-label="Footer navigation">
-          <a href="/about-us">About</a>
-          <a href="/our-team">Team</a>
-          <a href="/problem">Problem</a>
-          <a href="/solution">Solution</a>
-          <a href="/invest">Investors</a>
-          <a href="/contact-us">Contact</a>
+          <Link href="/about-us">About</Link>
+          <Link href="/our-team">Team</Link>
+          <Link href="/problem">Problem</Link>
+          <Link href="/solution">Solution</Link>
+          <Link href="/invest">Investors</Link>
+          <Link href="/contact-us">Contact</Link>
         </nav>
       </div>
       <div className="shell footer-bottom">

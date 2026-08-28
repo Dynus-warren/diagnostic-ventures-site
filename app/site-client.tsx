@@ -1,35 +1,49 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const logo = "/media/logo.png";
 
 export function Header({ overlay = false }: { overlay?: boolean }) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const isCurrent = (href: string) => pathname === href;
+  const aboutIsCurrent = pathname === "/about-us" || pathname === "/our-team";
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  useEffect(() => {
+    const updateHeader = () => setScrolled(window.scrollY > 24);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
+
   return (
-    <header className={`site-header ${overlay ? "is-overlay" : ""}`}>
+    <header className={`site-header ${overlay ? "is-overlay" : ""} ${scrolled ? "is-scrolled" : ""}`}>
       <div className="shell nav-row">
-        <a className="brand" href="/" aria-label="Diagnostic Ventures home">
+        <Link className="brand" href="/" aria-label="Diagnostic Ventures home" onClick={() => setOpen(false)}>
           <img src={logo} alt="Diagnostic Ventures" />
-        </a>
+        </Link>
         <nav className={`nav-links ${open ? "is-open" : ""}`} aria-label="Main navigation">
-          <div className="nav-about">
-            <a href="/about-us">About</a>
+          <div className={`nav-about ${aboutIsCurrent ? "is-current" : ""}`}>
+            <Link href="/about-us" aria-current={aboutIsCurrent ? "page" : undefined} onClick={() => setOpen(false)}>About</Link>
             <div className="nav-flyout">
-              <a href="/about-us">Our story</a>
-              <a href="/our-team">Our team</a>
+              <Link className={isCurrent("/about-us") ? "is-current" : ""} href="/about-us" aria-current={isCurrent("/about-us") ? "page" : undefined} onClick={() => setOpen(false)}>Our story</Link>
+              <Link className={isCurrent("/our-team") ? "is-current" : ""} href="/our-team" aria-current={isCurrent("/our-team") ? "page" : undefined} onClick={() => setOpen(false)}>Our team</Link>
             </div>
           </div>
-          <a href="/problem">Problem</a>
-          <a href="/solution">Solution</a>
-          <a href="/invest">Investors</a>
-          <a className="button button-nav" href="/contact-us">Contact us</a>
+          <Link className={isCurrent("/problem") ? "is-current" : ""} href="/problem" aria-current={isCurrent("/problem") ? "page" : undefined} onClick={() => setOpen(false)}>Problem</Link>
+          <Link className={isCurrent("/solution") ? "is-current" : ""} href="/solution" aria-current={isCurrent("/solution") ? "page" : undefined} onClick={() => setOpen(false)}>Solution</Link>
+          <Link className={isCurrent("/invest") ? "is-current" : ""} href="/invest" aria-current={isCurrent("/invest") ? "page" : undefined} onClick={() => setOpen(false)}>Investors</Link>
+          <Link className={`button button-nav ${isCurrent("/contact-us") ? "is-current" : ""}`} href="/contact-us" aria-current={isCurrent("/contact-us") ? "page" : undefined} onClick={() => setOpen(false)}>Contact us</Link>
         </nav>
         <button
           className={`menu-toggle ${open ? "is-open" : ""}`}
