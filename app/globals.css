@@ -163,6 +163,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .timeline h3 { margin: 0 0 6px; font-size: 1rem; }
 .timeline p { margin: 0; color: #aebed0; font-size: .88rem; line-height: 1.5; }
 .concentration .section-heading { max-width: 800px; }
+.concentration-unit { margin: -26px 0 24px; color: #32649a; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .concentration-bar { display: grid; grid-template-columns: 2.6fr 1.35fr 1.1fr .75fr; min-height: 220px; border-radius: var(--radius); overflow: hidden; background: #eaf1f5; }
 .concentration-bar > div { display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; border-right: 1px solid #fff; }
 .concentration-bar strong { font-family: "Lato"; font-size: clamp(1.7rem, 4vw, 3.8rem); }

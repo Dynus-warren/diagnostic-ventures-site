@@ -34,6 +34,7 @@ export default function ProblemPage() {
     <section className="section-pad concentration">
       <div className="shell">
         <SectionHeading eyebrow="The technical challenge" title="Finding four bacteria among 5.9 billion blood components." text="Bacterial concentrations can be extraordinarily low, which is why conventional systems depend on long incubation times to grow bacteria to measurable densities." />
+        <p className="concentration-unit">All figures shown are per mL of blood.</p>
         <div className="concentration-bar"><div><strong>5.5B</strong><span>Red blood cells</span></div><div><strong>500M</strong><span>Platelets</span></div><div><strong>10M</strong><span>White blood cells</span></div><div className="bacteria"><strong>4</strong><span>Total bacteria</span></div></div>
       </div>
     </section>
