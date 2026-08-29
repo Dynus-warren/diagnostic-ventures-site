@@ -136,7 +136,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .people-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .people-grid.leadership { grid-template-columns: repeat(3, 1fr); }
 .person-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
-.person-image { position: relative; height: 370px; overflow: hidden; background: #dfe8ee; }
+.person-image { position: relative; width: calc(100% - 56px); height: auto; aspect-ratio: 1; margin: 28px auto 0; overflow: hidden; border-radius: 50%; background: #dfe8ee; }
 .person-image img { width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: saturate(.85); transition: transform .5s, filter .3s; }
 .person-card:hover .person-image img { transform: scale(1.025); filter: saturate(1); }
 .person-copy { padding: 28px; }
@@ -313,7 +313,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .mission-panel, .testing-gap, .invest-band, .partner-cta { padding: 76px 0; }
   .about-team .split-media { order: 2; }
   .people-grid { gap: 18px; }
-  .person-image { height: 420px; }
+  .person-image { width: min(420px, calc(100% - 48px)); height: auto; }
   .impact-grid { grid-template-columns: 1fr 1fr; }
   .impact-grid article { min-height: 280px; border-bottom: 1px solid var(--line); }
   .impact-grid article:nth-child(2) { border-right: 0; }
@@ -370,7 +370,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .impact-grid article, .impact-grid article:nth-child(n), .workflow-grid article, .workflow-grid article:nth-child(n) { border-right: 0; border-bottom: 1px solid var(--line); }
   .workflow-grid article, .workflow-grid article:nth-child(n) { border-bottom-color: #ffffff26; }
   .impact-grid article:last-child, .workflow-grid article:last-child { border-bottom: 0; }
-  .person-image { height: 360px; }
+  .person-image { height: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
