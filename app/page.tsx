@@ -1,5 +1,5 @@
 import { Header } from "./site-client";
-import { Footer, PartnerCta, SectionHeading } from "./site-components";
+import { Footer, PartnerCta, ReferencesBar, SectionHeading } from "./site-components";
 import Image from "next/image";
 
 const videoMp4 = "/media/hero.mp4";
@@ -17,8 +17,10 @@ export default function Home() {
           <p className="eyebrow light">Diagnostic Ventures</p>
           <h1>Rapid testing saves lives.</h1>
           <p className="hero-lede">
-            Building a comprehensive sepsis diagnostics platform targeting
-            pathogen identification within 20 minutes.
+            Diagnostic Ventures is building the most comprehensive sepsis diagnostics platform, targeting pathogen identification within 20 minutes.
+          </p>
+          <p className="hero-evidence">
+            350,000 U.S. adults die from sepsis annually, and 80% of sepsis deaths could be prevented with rapid diagnosis and appropriate treatment.<sup>1</sup>
           </p>
           <p className="hero-proof">
             Helping physicians make faster, better-informed treatment decisions.
@@ -36,33 +38,17 @@ export default function Home() {
         <div className="shell intro-card">
           <div>
             <p className="eyebrow light">Building a better tomorrow</p>
-            <h2>Born from research. Built for the bedside.</h2>
+            <h2>About us</h2>
           </div>
           <div>
             <p>
-              Born out of a $5.2M NIH research grant at Brigham Young University,
-              Diagnostic Ventures is a Utah-native startup engineering a diagnostic
-              solution that replaces traditional blood cultures and eliminates
-              critical wait times.
+              Born out of a $5.2M NIH research grant at Brigham Young University, Diagnostic Ventures is a proud Utah-native startup on a mission to transform sepsis care. We are engineering a diagnostic solution that replaces traditional blood cultures, eliminating critical wait times and empowering providers to save lives.
             </p>
             <p className="fine-print">
               This product is currently under development and is not yet FDA-approved
               or available for commercial sale.
             </p>
             <a className="text-link light" href="/about-us">Our story <span>→</span></a>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-pad">
-        <div className="shell">
-          <SectionHeading eyebrow="Why it matters" title="Healthcare technology for time-critical conditions." text="Sepsis treatment cannot wait for the conventional diagnostic timeline. Our platform is designed around the clinical decisions that need to happen now." center />
-          <div className="card-grid three">
-            {[
-              ["01", "Direct from whole blood", "Isolate target pathogens without waiting for traditional culture processes."],
-              ["02", "Rapid identification", "Combine Raman spectroscopy with machine learning to identify bacteria quickly."],
-              ["03", "Integrated workflow", "Unify sample preparation and identification in a focused diagnostic platform."],
-            ].map(([n, title, text]) => <article className="feature-card" key={n}><span className="card-number">{n}</span><h3>{title}</h3><p>{text}</p><a className="text-link" href="/solution">Explore the solution <span>→</span></a></article>)}
           </div>
         </div>
       </section>
@@ -83,10 +69,15 @@ export default function Home() {
         <div className="shell">
           <SectionHeading eyebrow="The human cost of sepsis" title="A global emergency measured in lives." />
           <div className="stats-grid">
-            <div><strong>50M</strong><span>sepsis infections each year</span></div>
-            <div><strong>11M</strong><span>sepsis deaths each year</span></div>
-            <div><strong>1 in 5</strong><span>deaths worldwide caused by sepsis</span></div>
+            <div><strong>50M</strong><span>sepsis infections each year<sup>2</sup></span></div>
+            <div><strong>11M</strong><span>sepsis deaths each year<sup>2</sup></span></div>
+            <div><strong>1 in 5</strong><span>deaths worldwide caused by sepsis<sup>3</sup></span></div>
           </div>
+          <ReferencesBar dark items={[
+            "Zanotti-Cavazzoni S. Duration of hypotension before initiation of effective antimicrobial therapy is the critical determinant of survival in human septic shock. Yearbook of Critical Care Medicine. 2007;187–188.",
+            "Global Sepsis Alliance, 2024.",
+            "Rudd et al. Global, regional, and national sepsis incidence and mortality, 1990–2017: analysis for the Global Burden of Disease Study, 2020.",
+          ]} />
           <a className="text-link light" href="/problem">Understand the problem <span>→</span></a>
         </div>
       </section>

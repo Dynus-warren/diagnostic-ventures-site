@@ -39,6 +39,20 @@ export function SectionHeading({ eyebrow, title, text, center = false }: { eyebr
   );
 }
 
+export function ReferencesBar({ items, dark = false }: { items: string[]; dark?: boolean }) {
+  return (
+    <details className={`references-bar ${dark ? "is-dark" : ""}`}>
+      <summary>
+        <span>References</span>
+        <i className="references-toggle-icon" aria-hidden="true">+</i>
+      </summary>
+      <ol className="references-list">
+        {items.map((item) => <li key={item}>{item}</li>)}
+      </ol>
+    </details>
+  );
+}
+
 export function PartnerCta() {
   return (
     <section className="partner-cta">
@@ -48,7 +62,7 @@ export function PartnerCta() {
           <h2>Partner with us.</h2>
         </div>
         <div>
-          <p>Every minute counts when diagnosing sepsis. Connect with our team to learn more about our technology, clinical timeline, or partnership opportunities.</p>
+          <p>Every minute counts when diagnosing sepsis. We are pioneering the world’s fastest comprehensive pathogen identification system to eliminate the wait for blood cultures and save lives. Reach out to learn more about our technology, clinical timeline, or partnership opportunities.</p>
           <Link className="button button-light" href="/contact-us">Contact us <span>↗</span></Link>
         </div>
       </div>
